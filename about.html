@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Shriram Hardware Kale</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            orange: '#F57C00',
+                            yellow: '#FFB300',
+                            dark: '#1A1A1B',
+                            grey: '#333333'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .reveal { opacity: 0; }
+        .reveal.active { opacity: 1; }
+        .industrial-pattern {
+            background-color: #1a1a1b;
+            background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+        }
+    </style>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="pt-20 overflow-x-hidden bg-slate-50 text-slate-900" x-data="{ mobileMenu: false }">
+
+<!-- NAVBAR -->
+<nav 
+  class="fixed top-0 w-full z-50 bg-brand-dark/95 backdrop-blur-md border-b border-white/10 text-white"
+  @click.outside="mobileMenu = false"
+>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+
+            <!-- LOGO -->
+            <div class="flex items-center space-x-2">
+                <div class="p-2 bg-brand-orange rounded-lg">
+                    <i data-lucide="wrench" class="w-6 h-6"></i>
+                </div>
+                <span class="text-xl font-bold uppercase">
+                    SHRIRAM <span class="text-brand-orange">HARDWARE</span>
+                </span>
+            </div>
+
+            <!-- DESKTOP MENU -->
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="index.html" class="hover:text-brand-orange">Home</a>
+                <a href="about.html" class="hover:text-brand-orange">About</a>
+                <a href="product.html" class="hover:text-brand-orange">Products</a>
+                <a href="contact.html" class="px-5 py-2 bg-brand-orange rounded-full">Contact Us</a>
+            </div>
+
+            <!-- MOBILE BUTTON -->
+            <div class="md:hidden">
+                <button @click="mobileMenu = !mobileMenu" class="p-2">
+                    <i data-lucide="menu" x-show="!mobileMenu"></i>
+                    <i data-lucide="x" x-show="mobileMenu"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div 
+        x-show="mobileMenu" 
+        x-cloak
+        x-transition
+        class="md:hidden bg-brand-dark border-t border-white/10 px-4 py-6 space-y-4 text-center"
+    >
+
+        <a href="index.html" @click="mobileMenu = false" class="block text-lg hover:text-brand-orange">Home</a>
+
+        <a href="about.html" @click="mobileMenu = false" class="block text-lg hover:text-brand-orange">About</a>
+
+        <a href="product.html" @click="mobileMenu = false" class="block text-lg hover:text-brand-orange">Products</a>
+
+        <a href="contact.html" @click="mobileMenu = false" class="block text-lg text-brand-orange font-bold">Contact Us</a>
+
+    </div>
+
+</nav>
+
+    <section id="about" class="py-20 overflow-hidden">
+        
+        <div class="max-w-7xl mx-auto px-4 mb-20 text-center reveal" data-anim="animate__fadeIn">
+            <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-4">
+                About <span class="text-brand-orange">Shriram Hardware</span>
+            </h2>
+            <p class="text-gray-500 font-bold tracking-widest uppercase text-sm">Serving Quality & Trust in Kale</p>
+            <div class="flex justify-center mt-6">
+                <div class="w-16 h-1.5 bg-brand-orange rounded-full"></div>
+                <div class="w-4 h-1.5 bg-brand-yellow rounded-full ml-2"></div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center mb-32">
+            <div class="reveal" data-anim="animate__slideInLeft">
+                <div class="relative group">
+                    <div class="absolute -inset-4 bg-gray-100 rounded-2xl -z-10 group-hover:bg-orange-50 transition-colors"></div>
+                    <img src="./image/shop-front.jpg.jpeg" alt="Shriram Hardware Storefront" class="rounded-2xl shadow-2xl w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-[1.03]">
+                    <div class="absolute -bottom-6 -right-6 p-8 bg-brand-dark text-white rounded-2xl shadow-xl hidden lg:block">
+                        <i data-lucide="award" class="w-10 h-10 text-brand-orange mb-2"></i>
+                        <p class="text-xs uppercase tracking-widest font-bold">Authorized Dealer</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reveal" data-anim="animate__slideInRight">
+                <h3 class="text-3xl font-bold mb-6 text-brand-dark">A Trusted Local Partner</h3>
+                <div class="space-y-6 text-lg text-gray-600 leading-relaxed">
+                    <p>
+                        Established in <span class="font-bold text-brand-dark">Kale, Karad</span>, Shriram Hardware has grown into a cornerstone for high-quality construction and agricultural materials in the Satara region.
+                    </p>
+                    <p>
+                        We take pride in serving our local farmers, professional builders, and households with a curated selection of reliable U-PVC, C-PVC, and SWR materials, alongside industrial-grade tools.
+                    </p>
+                    <div class="p-6 border-l-8 border-brand-orange bg-gray-50 rounded-r-xl">
+                        <p class="italic text-brand-dark font-medium">
+                            "Led by <span class="text-brand-orange font-bold">Amit Shantaram Kumbhar</span>, our team is dedicated to providing reliable products and honest service to ensure your projects stand the test of time."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-gray-50 py-24">
+            <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="reveal bg-white p-10 rounded-2xl border border-gray-100 shadow-sm transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-orange-500/10 group" data-anim="animate__fadeInUp">
+                    <div class="w-14 h-14 bg-orange-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-orange transition-colors duration-300">
+                        <i data-lucide="history" class="text-brand-orange group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">13+ Years</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">Over a decade of expertise in hardware and irrigation solutions.</p>
+                </div>
+
+                <div class="reveal bg-white p-10 rounded-2xl border border-gray-100 shadow-sm transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-orange-500/10 group" data-anim="animate__fadeInUp">
+                    <div class="w-14 h-14 bg-orange-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-orange transition-colors duration-300">
+                        <i data-lucide="shield-check" class="text-brand-orange group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Quality Assured</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">We strictly source ISI-marked products from trusted manufacturers.</p>
+                </div>
+
+                <div class="reveal bg-white p-10 rounded-2xl border border-gray-100 shadow-sm transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-orange-500/10 group" data-anim="animate__fadeInUp">
+                    <div class="w-14 h-14 bg-orange-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-orange transition-colors duration-300">
+                        <i data-lucide="hard-drive" class="text-brand-orange group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Wide Range</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">From heavy machinery to the smallest plumbing fitting, we have it all.</p>
+                </div>
+
+                <div class="reveal bg-white p-10 rounded-2xl border border-gray-100 shadow-sm transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-orange-500/10 group" data-anim="animate__fadeInUp">
+                    <div class="w-14 h-14 bg-orange-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-orange transition-colors duration-300">
+                        <i data-lucide="users" class="text-brand-orange group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Community First</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">Building long-term relationships through transparent pricing.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="industrial-pattern py-24 relative overflow-hidden">
+            <div class="max-w-5xl mx-auto px-4 grid md:grid-cols-2 gap-12 text-white reveal" data-anim="animate__zoomIn">
+                <div class="p-8 rounded-2xl border border-white/10 backdrop-blur-sm bg-white/5">
+                    <h5 class="text-2xl font-bold mb-4 text-brand-yellow flex items-center">
+                        <i data-lucide="eye" class="mr-3"></i> Vision
+                    </h5>
+                    <p class="text-gray-300 text-lg italic">
+                        “To be the most trusted and efficient hardware supplier in the region, empowering every builder and farmer with superior materials.”
+                    </p>
+                </div>
+                <div class="p-8 rounded-2xl border border-white/10 backdrop-blur-sm bg-white/5">
+                    <h5 class="text-2xl font-bold mb-4 text-brand-orange flex items-center">
+                        <i data-lucide="target" class="mr-3"></i> Mission
+                    </h5>
+                    <p class="text-gray-300 text-lg italic">
+                        “Providing durable products at fair prices with excellent service, ensuring quality reaches every corner of Kale.”
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="py-24 max-w-4xl mx-auto px-4 text-center">
+            <div class="reveal inline-block p-1.5 rounded-full bg-gradient-to-tr from-brand-orange to-brand-yellow mb-8 shadow-2xl" data-anim="animate__fadeIn">
+                <div class="w-44 h-44 rounded-full border-4 border-white overflow-hidden bg-gray-200 group relative">
+                    <i data-lucide="user-2" class="w-24 h-24 text-gray-400 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 group-hover:scale-110 transition-transform"></i>
+                </div>
+            </div>
+            <div class="reveal" data-anim="animate__fadeInUp">
+                <h3 class="text-3xl font-black text-brand-dark uppercase tracking-tighter">Amit Shantaram Kumbhar</h3>
+                <p class="text-brand-orange font-bold uppercase tracking-widest text-sm mb-6">Owner & Managing Director</p>
+                <div class="relative px-12">
+                    <i data-lucide="quote" class="absolute -top-4 -left-2 w-10 h-10 text-gray-100 -z-10 rotate-180"></i>
+                    <p class="text-xl text-gray-600 italic leading-relaxed">
+                        “At Shriram Hardware, our goal is simple: to serve every customer with honesty and provide products that build a stronger tomorrow for our community.”
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    <div class="reveal bg-brand-dark p-12 rounded-[2.5rem] text-center text-white shadow-2xl max-w-2xl mx-auto">
+
+    <h3 class="text-3xl font-bold mb-6">Need Help with Materials?</h3>
+
+    <p class="text-gray-400 mb-8 text-lg">
+        Visit our store or explore our product range to find the right solution.
+    </p>
+
+    <div class="flex justify-center gap-4">
+
+        <!-- Products -->
+        <a href="product.html"
+           class="px-8 py-3 bg-brand-orange rounded-full font-bold hover:scale-105 transition">
+            View Products
+        </a>
+
+        <!-- Contact -->
+        <a href="contact.html"
+           class="px-8 py-3 border border-white rounded-full font-bold hover:bg-white hover:text-black transition">
+            Contact Us
+        </a>
+
+    </div>
+
+</div>
+
+    </section>
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // SCROLL REVEAL SCRIPT
+        const observerOptions = {
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const animClass = entry.target.dataset.anim;
+                    entry.target.classList.add('animate__animated', animClass, 'active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

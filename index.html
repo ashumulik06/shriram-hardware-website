@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shriram Hardware Kale | Specialist in UPVC, CPVC & Irrigation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .hero-zoom { animation: zoom 25s infinite alternate; }
+        @keyframes zoom { from { transform: scale(1); } to { transform: scale(1.15); } }
+        [x-cloak] { display: none !important; }
+        .product-card-overlay { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            orange: '#F57C00',
+                            yellow: '#FFB300',
+                            dark: '#1A1A1B',
+                            grey: '#333333'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="pt-20 overflow-x-hidden bg-slate-50 text-slate-900" x-data="{ mobileMenu: false }">
+
+<!-- NAVBAR -->
+<nav 
+  class="fixed top-0 w-full z-50 bg-brand-dark/95 backdrop-blur-md border-b border-white/10 text-white"
+  @click.outside="mobileMenu = false"
+>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+
+            <!-- LOGO -->
+            <div class="flex items-center space-x-2">
+                <div class="p-2 bg-brand-orange rounded-lg">
+                    <i data-lucide="wrench" class="w-6 h-6"></i>
+                </div>
+                <span class="text-xl font-bold uppercase">
+                    SHRIRAM <span class="text-brand-orange">HARDWARE</span>
+                </span>
+            </div>
+
+            <!-- DESKTOP MENU -->
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="index.html" class="hover:text-brand-orange">Home</a>
+                <a href="about.html" class="hover:text-brand-orange">About</a>
+                <a href="product.html" class="hover:text-brand-orange">Products</a>
+                <a href="contact.html" class="px-5 py-2 bg-brand-orange rounded-full">Contact Us</a>
+            </div>
+
+            <!-- MOBILE BUTTON -->
+            <div class="md:hidden">
+                <button @click="mobileMenu = !mobileMenu" class="p-2">
+                    <i data-lucide="menu" x-show="!mobileMenu"></i>
+                    <i data-lucide="x" x-show="mobileMenu"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div 
+        x-show="mobileMenu" 
+        x-cloak
+        x-transition
+        class="md:hidden bg-brand-dark border-t border-white/10 px-4 py-6 space-y-4 text-center"
+    >
+
+        <a href="index.html" @click="mobileMenu = false" class="block text-lg hover:text-brand-orange">Home</a>
+
+        <a href="about.html" @click="mobileMenu = false" class="block text-lg hover:text-brand-orange">About</a>
+
+        <a href="product.html" @click="mobileMenu = false" class="block text-lg hover:text-brand-orange">Products</a>
+
+        <a href="contact.html" @click="mobileMenu = false" class="block text-lg text-brand-orange font-bold">Contact Us</a>
+
+    </div>
+
+</nav>
+
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&q=80&w=2000" 
+                 class="w-full h-full object-cover hero-zoom" alt="Hardware Tools">
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/60 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 text-white text-center md:text-left">
+            <div class="max-w-2xl">
+                <h1 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl">
+                    Specialized <span class="text-brand-yellow">Piping & Hardware</span> Solutions
+                </h1>
+                <p class="text-xl text-gray-300 mb-10 leading-relaxed">
+                    Premium U-PVC, C-PVC, and SWR materials. The trusted source for agricultural irrigation and industrial tools in Kale.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start">
+                    <a href="#products" class="px-8 py-4 bg-brand-orange rounded-lg font-bold hover:bg-brand-yellow transition-all text-center">Explore Materials</a>
+                    <a href="#contact" class="px-8 py-4 border-2 border-white rounded-lg font-bold hover:bg-white hover:text-brand-dark transition-all text-center">Get Inquiry</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+            <div class="relative group">
+                <div class="absolute -inset-2 bg-gradient-to-r from-brand-orange to-brand-yellow rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+                <div class="relative overflow-hidden rounded-xl shadow-2xl border-4 border-white">
+                    <img src="./image/shop-front.jpg.jpeg" alt="Shriram Hardware Shop" class="w-full h-[450px] object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+            </div>
+            <div>
+                <h2 class="text-4xl font-bold mb-6">Visit Our Store in <span class="text-brand-orange">Kale</span></h2>
+                <p class="text-gray-600 mb-8 text-lg">
+                    Strategically located in Karad, Satara. We stock a complete range of hardware and specialized piping materials for your construction and farming needs.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-4"><i data-lucide="map-pin" class="text-brand-orange"></i><span class="font-bold text-brand-grey text-lg">Kale, Karad, Satara, Maharashtra</span></div>
+                    <div class="flex items-center space-x-4"><i data-lucide="mail" class="text-brand-orange"></i><span class="font-bold text-brand-grey text-lg">Shreeramkrishi@gmail.com</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="py-24 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-4 uppercase tracking-tighter">Our Core <span class="text-brand-orange">Materials</span></h2>
+            <div class="w-24 h-1.5 bg-brand-orange mx-auto rounded-full mb-16"></div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="relative group overflow-hidden rounded-2xl bg-white shadow-xl">
+                    <img src="./image/UPVC.png" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-brand-dark/40 group-hover:bg-brand-dark/70 transition-all duration-300"></div>
+                    <div class="absolute bottom-0 left-0 p-8 text-left text-white translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                        <h4 class="text-2xl font-extrabold mb-2 uppercase">U-PVC Material</h4>
+                        <p class="text-gray-300 mb-4 opacity-0 group-hover:opacity-100 transition-opacity">Premium cold water piping solutions.</p>
+                        <a href="product.html"
+                        class="inline-block bg-brand-orange px-6 py-2 rounded-full text-sm font-bold hover:bg-brand-yellow">
+                            Product Insight
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-2xl bg-white shadow-xl">
+                    <img src="./image/cpvc.jpg" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-brand-dark/40 group-hover:bg-brand-dark/70 transition-all duration-300"></div>
+                    <div class="absolute bottom-0 left-0 p-8 text-left text-white translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                        <h4 class="text-2xl font-extrabold mb-2 uppercase">C-PVC Material</h4>
+                        <p class="text-gray-300 mb-4 opacity-0 group-hover:opacity-100 transition-opacity">Heat-resistant plumbing systems.</p>
+                        <a href="product.html" class="inline-block bg-brand-orange px-6 py-2 rounded-full text-sm font-bold hover:bg-brand-yellow">
+                            Product Insight
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-2xl bg-white shadow-xl">
+                    <img src="https://5.imimg.com/data5/JZ/GX/MZ/SELLER-275691/star-swr-pvc-pipes-fittings-500x500.png" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-brand-dark/40 group-hover:bg-brand-dark/70 transition-all duration-300"></div>
+                    <div class="absolute bottom-0 left-0 p-8 text-left text-white translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                        <h4 class="text-2xl font-extrabold mb-2 uppercase">SWR Material</h4>
+                        <p class="text-gray-300 mb-4 opacity-0 group-hover:opacity-100 transition-opacity">Soil, Waste, and Rainwater drainage.</p>
+                       <a href="product.html" class="inline-block bg-brand-orange px-6 py-2 rounded-full text-sm font-bold hover:bg-brand-yellow">
+                            Product Insight
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-2xl bg-white shadow-xl">
+                    <img src="https://img.lazcdn.com/g/p/239fa9252cc0a91c5c2c38eee5e58920.jpg_720x720q80.jpg" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-brand-dark/40 group-hover:bg-brand-dark/70 transition-all duration-300"></div>
+                    <div class="absolute bottom-0 left-0 p-8 text-left text-white translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                        <h4 class="text-2xl font-extrabold mb-2 uppercase">GI Fittings</h4>
+                        <p class="text-gray-300 mb-4 opacity-0 group-hover:opacity-100 transition-opacity">Galvanized Iron fittings for high pressure.</p>
+                        <a href="product.html" class="inline-block bg-brand-orange px-6 py-2 rounded-full text-sm font-bold hover:bg-brand-yellow">
+                            Product Insight
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-2xl bg-white shadow-xl">
+                    <img src="https://tse2.mm.bing.net/th/id/OIP.-q-vjTnZAxLNrA2n3QePjgHaFm?pid=Api&P=0&h=180" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-brand-dark/40 group-hover:bg-brand-dark/70 transition-all duration-300"></div>
+                    <div class="absolute bottom-0 left-0 p-8 text-left text-white translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                        <h4 class="text-2xl font-extrabold mb-2 uppercase text-xs sm:text-xl">Agri & Irrigation</h4>
+                        <p class="text-gray-300 mb-4 opacity-0 group-hover:opacity-100 transition-opacity">Complete drip and sprinkler systems.</p>
+                        <a href="product.html" class="inline-block bg-brand-orange px-6 py-2 rounded-full text-sm font-bold hover:bg-brand-yellow">
+                            Product Insight
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-2xl bg-white shadow-xl">
+                    <img src="https://png.pngtree.com/png-vector/20240619/ourmid/pngtree-hardware-tool-transparent-background-free-download-png-image_12801136.png" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-brand-dark/40 group-hover:bg-brand-dark/70 transition-all duration-300"></div>
+                    <div class="absolute bottom-0 left-0 p-8 text-left text-white translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                        <h4 class="text-2xl font-extrabold mb-2 uppercase text-xs sm:text-xl">Hardware & Tools</h4>
+                        <p class="text-gray-300 mb-4 opacity-0 group-hover:opacity-100 transition-opacity">High-grade tools for all professions.</p>
+                        <a href="product.html" class="inline-block bg-brand-orange px-6 py-2 rounded-full text-sm font-bold hover:bg-brand-yellow">
+                            Product Insight
+                        </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-4xl font-bold mb-6">Expertise & <span class="text-brand-orange">Commitment</span></h2>
+                <p class="text-gray-600 mb-8 text-lg">Owned by <b>Amit Shantaram Kumbhar</b>, Shriram Hardware is dedicated to providing only ISI-marked genuine materials to the people of Satara.</p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="p-6 bg-gray-50 rounded-xl border-l-4 border-brand-orange">
+                        <h3 class="font-bold text-brand-dark uppercase">Genuine</h3>
+                        <p class="text-xs text-gray-500">100% Original Products</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-xl border-l-4 border-brand-yellow">
+                        <h3 class="font-bold text-brand-dark uppercase">Service</h3>
+                        <p class="text-xs text-gray-500">Fast Local Delivery</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                 <div class="absolute -top-4 -left-4 w-full h-full bg-brand-orange/10 rounded-2xl"></div>
+                 <img src="https://www.capitoltechsolutions.com/wp-content/uploads/hardwaresuperstore-logo.jpg" class="rounded-2xl relative z-10 shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-brand-dark text-white text-center">
+    <div class="max-w-4xl mx-auto px-4">
+        <h2 class="text-4xl font-bold mb-6 tracking-tighter">Need a Bulk Quote?</h2>
+        <p class="text-gray-400 text-lg mb-10">
+            Contact us instantly via call, WhatsApp for fast response.
+        </p>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+
+            <!-- Call -->
+            <a href="tel:+919503896046"
+               class="bg-green-600 px-8 py-4 rounded-full font-bold hover:scale-105 transition">
+                📞 Call Now
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/919503896046?text=Hello%20I%20want%20bulk%20quote"
+               class="bg-green-500 px-8 py-4 rounded-full font-bold hover:scale-105 transition">
+                💬 WhatsApp
+            </a>
+
+        </div>
+    </div>
+</section>
+
+    <footer id="contact" class="bg-black text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div>
+                <h3 class="text-2xl font-bold mb-6">SHRIRAM <span class="text-brand-orange">HARDWARE</span></h3>
+                <p class="text-gray-500">The premier source for piping and irrigation in Kale, Karad.</p>
+            </div>
+            <div>
+                <h4 class="text-brand-orange font-bold mb-4 uppercase">Contact</h4>
+                <p class="text-gray-400">Email: Shreeramkrishi@gmail.com</p>
+                <p class="text-gray-400">Location: Kale, Karad, Satara</p>
+            </div>
+            <div>
+                <h4 class="text-brand-orange font-bold mb-4 uppercase">Social</h4>
+                <div class="flex space-x-4"><i data-lucide="facebook"></i><i data-lucide="instagram"></i></div>
+            </div>
+        </div>
+        <div class="mt-20 border-t border-white/5 pt-10 text-center text-gray-600 text-xs">
+            © 2026 Shriram Hardware Kale. Academic Project Submission.
+        </div>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>

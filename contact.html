@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Shriram Hardware</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<script>
+tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                brand: {
+                    orange: '#F57C00',
+                    yellow: '#FFB300',
+                    dark: '#1A1A1B'
+                }
+            }
+        }
+    }
+}
+</script>
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body class="pt-20 overflow-x-hidden bg-slate-50 text-slate-900" x-data="{ mobileMenu: false }">
+
+<!-- NAVBAR -->
+<nav 
+  class="fixed top-0 w-full z-50 bg-brand-dark/95 backdrop-blur-md border-b border-white/10 text-white"
+  @click.outside="mobileMenu = false"
+>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+
+            <!-- LOGO -->
+            <div class="flex items-center space-x-2">
+                <div class="p-2 bg-brand-orange rounded-lg">
+                    <i data-lucide="wrench" class="w-6 h-6"></i>
+                </div>
+                <span class="text-xl font-bold uppercase">
+                    SHRIRAM <span class="text-brand-orange">HARDWARE</span>
+                </span>
+            </div>
+
+            <!-- DESKTOP MENU -->
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="index.html" class="hover:text-brand-orange">Home</a>
+                <a href="about.html" class="hover:text-brand-orange">About</a>
+                <a href="product.html" class="hover:text-brand-orange">Products</a>
+                <a href="contact.html" class="px-5 py-2 bg-brand-orange rounded-full">Contact Us</a>
+            </div>
+
+            <!-- MOBILE BUTTON -->
+            <div class="md:hidden">
+                <button @click="mobileMenu = !mobileMenu" class="p-2">
+                    <i data-lucide="menu" x-show="!mobileMenu"></i>
+                    <i data-lucide="x" x-show="mobileMenu"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div 
+        x-show="mobileMenu" 
+        x-cloak
+        x-transition
+        class="md:hidden bg-brand-dark border-t border-white/10 px-4 py-6 space-y-4 text-center"
+    >
+
+        <a href="index.html" @click="mobileMenu = false" class="block text-lg hover:text-brand-orange">Home</a>
+
+        <a href="about.html" @click="mobileMenu = false" class="block text-lg hover:text-brand-orange">About</a>
+
+        <a href="product.html" @click="mobileMenu = false" class="block text-lg hover:text-brand-orange">Products</a>
+
+        <a href="contact.html" @click="mobileMenu = false" class="block text-lg text-brand-orange font-bold">Contact Us</a>
+
+    </div>
+
+</nav>
+
+<!-- CONTENT -->
+<div class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-10">
+
+    <!-- LEFT SIDE -->
+    <div class="space-y-6">
+
+        <h2 class="text-3xl font-bold text-brand-orange">Contact Us</h2>
+
+        <p class="text-gray-600">
+            Reach us for hardware materials, bulk orders, or any inquiry.
+        </p>
+
+        <div class="space-y-4">
+            <p><b>📍 Address:</b> Kale, Karad, Satara</p>
+            <p><b>📞 Phone:</b> +91 9503896046</p>
+            <p><b>📧 Email:</b> Shreeramkrishi@gmail.com</p>
+        </div>
+
+        <!-- BUTTONS -->
+        <div class="flex gap-4 flex-wrap">
+            <a href="tel:+919876543210" class="bg-green-600 text-white px-5 py-3 rounded-lg">Call</a>
+            <a href="https://wa.me/919503896046" class="bg-green-500 text-white px-5 py-3 rounded-lg">WhatsApp</a>
+        </div>
+
+        <!-- FORM -->
+        <form onsubmit="sendToWhatsApp(event)" class="bg-white p-6 rounded-xl shadow-md space-y-4">
+
+    <h3 class="text-xl font-bold mb-2">Send Inquiry</h3>
+
+    <input type="text" id="name" placeholder="Your Name" required
+        class="w-full p-3 border rounded-lg">
+
+    <input type="tel" id="phone" placeholder="Mobile Number" required
+        class="w-full p-3 border rounded-lg">
+
+    <textarea id="message" placeholder="Your Message" required
+        class="w-full p-3 border rounded-lg"></textarea>
+
+    <button type="submit"
+        class="w-full bg-brand-orange text-white py-3 rounded-lg font-bold">
+        Submit
+    </button>
+
+</form>
+
+    </div>
+
+    <!-- MAP -->
+    <div class="rounded-xl overflow-hidden shadow-lg">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3811.4437455479874!2d74.15772129999999!3d17.197249400000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc19ce822b2abdd%3A0x2b86e23888057390!2sShriram%20Krishi%20Udyog%20Kendra!5e0!3m2!1sen!2sin!4v1776692503098!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+</div>
+
+<script>
+lucide.createIcons();
+</script>
+<script>
+function sendToWhatsApp(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const message = document.getElementById("message").value;
+
+    const text = `New Inquiry:%0AName: ${name}%0APhone: ${phone}%0AMessage: ${message}`;
+
+    const ownerNumber = "919503896046"; // 👉 YOUR NUMBER (no +)
+
+    const url = `https://wa.me/${ownerNuber}?text=${text}`;
+
+    window.open(url, '_blank');
+}
+</script>
+
+</body>
+</html>
